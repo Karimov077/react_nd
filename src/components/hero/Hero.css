@@ -1,0 +1,283 @@
+/* Hero Section Base Styles */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero Content Animations */
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  animation: fadeInUp 1s ease-out 0.2s both;
+  transition: transform 0.3s ease;
+}
+
+.hero-title:hover {
+  transform: translateY(-2px);
+}
+
+.hero-subtitle {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-buttons {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+/* Primary Button Animations */
+.hero-btn-primary {
+  position: relative;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none;
+  transform: translateY(0);
+}
+
+.hero-btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.hero-btn-primary:hover {
+  background: #7b79e8 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(102, 97, 245, 0.4);
+}
+
+.hero-btn-primary:hover::before {
+  left: 100%;
+}
+
+.hero-btn-primary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px rgba(102, 97, 245, 0.3);
+}
+
+.hero-btn-primary span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Secondary Button Animations */
+.hero-btn-secondary {
+  position: relative;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  transform: translateY(0);
+}
+
+.hero-btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.hero-btn-secondary:hover {
+  background: #4a4c50 !important;
+  border-color: #6661f5;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(52, 54, 58, 0.4);
+}
+
+.hero-btn-secondary:hover::before {
+  left: 100%;
+}
+
+.hero-btn-secondary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px rgba(52, 54, 58, 0.3);
+}
+
+.hero-btn-secondary span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ripple Effect for Buttons */
+.hero-btn-primary::after,
+.hero-btn-secondary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  pointer-events: none;
+}
+
+.hero-btn-primary:active::after,
+.hero-btn-secondary:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* Hero Image Animations */
+.hero-image {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.main-image {
+  transition: transform 0.5s ease, filter 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.main-image:hover {
+  transform: translateY(-10px) scale(1.02);
+  filter: brightness(1.1);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Bottom Content Animations */
+.bottom-content {
+  animation: fadeInUp 1s ease-out 1s both;
+}
+
+.bottom-title {
+  transition: transform 0.3s ease;
+}
+
+.bottom-title:hover {
+  transform: translateY(-2px);
+}
+
+.bottom-subtitle {
+  transition: color 0.3s ease;
+}
+
+.bottom-subtitle:hover {
+  color: #b1b8c0;
+}
+
+/* Shape Animation */
+.shape-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Pulse Animation for Primary Button */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 97, 245, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(102, 97, 245, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 97, 245, 0);
+  }
+}
+
+.hero-btn-primary:focus {
+  animation: pulse 2s infinite;
+  outline: none;
+}
+
+/* Loading State (optional) */
+.hero-btn-primary.loading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid transparent;
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+  z-index: 3;
+}
+
+.hero-btn-primary.loading span {
+  opacity: 0;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 960px) {
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    font-size: 14px;
+  }
+
+  .hero-title {
+    animation-delay: 0.1s;
+  }
+
+  .hero-subtitle {
+    animation-delay: 0.2s;
+  }
+
+  .hero-buttons {
+    animation-delay: 0.3s;
+  }
+}
+
+@media (max-width: 580px) {
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}

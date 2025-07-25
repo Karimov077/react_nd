@@ -1,0 +1,485 @@
+/* Base Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Feature Cards Section */
+.cards-container {
+  animation: fadeInUp 1s ease-out;
+}
+
+.feature-card {
+  animation: fadeInUp 1s ease-out both;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 97, 245, 0.05), rgba(102, 97, 245, 0.02));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.card-image {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.card-title {
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover .card-title {
+  color: #7b79e8;
+}
+
+.card-description {
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover .card-description {
+  color: #b1b8c0;
+}
+
+/* Center Section */
+.center-section {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.badge-button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.badge-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(211, 244, 216, 0.3);
+}
+
+.badge-button:hover::before {
+  left: 100%;
+}
+
+.section-title {
+  animation: fadeInUp 1s ease-out 0.5s both;
+  transition: transform 0.3s ease;
+}
+
+.section-title:hover {
+  transform: translateY(-2px);
+}
+
+.section-subtitle {
+  animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+/* Feature Sections */
+.feature-section {
+  animation: fadeInUp 1s ease-out both;
+}
+
+.feature-section-reverse {
+  animation: fadeInUp 1s ease-out both;
+}
+
+.feature-content {
+  animation: fadeInLeft 1s ease-out 0.2s both;
+}
+
+.feature-section-reverse .feature-content {
+  animation: fadeInRight 1s ease-out 0.2s both;
+}
+
+.feature-badge {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.feature-badge:hover {
+  transform: translateX(5px);
+  color: #7b79e8;
+}
+
+.feature-title {
+  transition: transform 0.3s ease;
+}
+
+.feature-title:hover {
+  transform: translateY(-2px);
+}
+
+.feature-description {
+  transition: color 0.3s ease;
+}
+
+.feature-description:hover {
+  color: #b1b8c0;
+}
+
+.feature-item {
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 10px;
+}
+
+.feature-item:hover {
+  transform: translateX(10px);
+  color: #b1b8c0;
+}
+
+.check-icon {
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover .check-icon {
+  transform: scale(1.2);
+}
+
+.feature-image {
+  animation: fadeInRight 1s ease-out 0.4s both;
+}
+
+.feature-section-reverse .feature-image {
+  animation: fadeInLeft 1s ease-out 0.4s both;
+}
+
+.main-feature-img {
+  transition: all 0.5s ease;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.main-feature-img:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Testimonials Section */
+.testimonials-header {
+  animation: fadeInUp 1s ease-out both;
+}
+
+.testimonials-title {
+  transition: transform 0.3s ease;
+}
+
+.testimonials-title:hover {
+  transform: translateY(-2px);
+}
+
+.testimonials-subtitle {
+  transition: color 0.3s ease;
+}
+
+.testimonials-subtitle:hover {
+  color: #b1b8c0;
+}
+
+.testimonials-grid {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.testimonial-card {
+  animation: scaleIn 1s ease-out both;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 97, 245, 0.1), rgba(102, 97, 245, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card:hover::before {
+  opacity: 1;
+}
+
+.testimonial-avatar {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-avatar {
+  transform: scale(1.05);
+}
+
+.testimonial-text {
+  transition: color 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-text {
+  color: #b1b8c0;
+}
+
+.testimonial-author {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-author {
+  transform: translateY(-2px);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  animation: fadeInUp 1s ease-out both;
+}
+
+.newsletter-container {
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.newsletter-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(102, 97, 245, 0.3);
+}
+
+.newsletter-content {
+  animation: fadeInLeft 1s ease-out 0.2s both;
+}
+
+.newsletter-title {
+  transition: transform 0.3s ease;
+}
+
+.newsletter-title:hover {
+  transform: translateY(-2px);
+}
+
+.newsletter-subtitle {
+  transition: opacity 0.3s ease;
+}
+
+.newsletter-subtitle:hover {
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  animation: fadeInRight 1s ease-out 0.4s both;
+}
+
+.newsletter-input {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: #aeacf9;
+  box-shadow: 0 0 0 3px rgba(174, 172, 249, 0.2);
+  transform: translateY(-2px);
+}
+
+.newsletter-button {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 97, 245, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.newsletter-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  background: #f8f9fa !important;
+}
+
+.newsletter-button:hover::before {
+  left: 100%;
+}
+
+.newsletter-button:active {
+  transform: translateY(0);
+}
+
+.newsletter-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter-decoration {
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.newsletter-container:hover .newsletter-decoration {
+  transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1100px) {
+  .feature-content {
+    animation: fadeInUp 1s ease-out 0.2s both;
+  }
+
+  .feature-section-reverse .feature-content {
+    animation: fadeInUp 1s ease-out 0.2s both;
+  }
+
+  .feature-image {
+    animation: fadeInUp 1s ease-out 0.4s both;
+  }
+
+  .feature-section-reverse .feature-image {
+    animation: fadeInUp 1s ease-out 0.4s both;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    margin-bottom: 20px;
+  }
+
+  .testimonial-card {
+    margin-bottom: 20px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .newsletter-input,
+  .newsletter-button {
+    width: 100% !important;
+  }
+}
+
+/* Loading Animation for Newsletter Button */
+.newsletter-button.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid transparent;
+  border-top: 2px solid #6661f5;
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+  z-index: 3;
+}
+
+.newsletter-button.loading span {
+  opacity: 0;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
