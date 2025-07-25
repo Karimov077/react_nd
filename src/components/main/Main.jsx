@@ -174,6 +174,7 @@ function Main() {
             <button className="w-[139px] h-[48px] bg-white text-[#6661F5] font-bold max-[515px]:w-[110px] max-[515px]:h-[40px] max-[430px]:w-[80px] max-[430px]:h-[35px] max-[430px]:text-[14px] newsletter-button">
               <span>Subscribe</span>
             </button>
+            
           </div>
           <img
             className="absolute top-[4px] right-[20px] newsletter-decoration"
